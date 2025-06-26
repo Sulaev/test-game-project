@@ -1,0 +1,136 @@
+export type Game = {
+  id: number;
+  title: string;
+  cover: string;
+  genre: string;
+  description: string;
+  platform: string;
+  rating: number;
+  screenshots: string[];
+  releaseDate: string;
+  publisher: string;
+};
+
+export const games: Game[] = [
+  {
+    id: 1,
+    title: "Dragon Age: Inquisition",
+    cover: "/images/dragon-age.jpg",
+    genre: "RPG",
+    description:
+      "Фэнтезийная ролевая игра от BioWare с огромным открытым миром.",
+    platform: "PC",
+    rating: 9.3,
+    screenshots: ["/images/da-1.jpg", "/images/da-2.jpg"],
+    releaseDate: "2014-11-18",
+    publisher: "Electronic Arts",
+  },
+  {
+    id: 2,
+    title: "Middle-earth: Shadow of Mordor",
+    cover: "/images/shadow-of-mordor.jpg",
+    genre: "Action",
+    description: "Экшен в мире Властелина колец с системой Nemesis.",
+    platform: "PS4",
+    rating: 8.9,
+    screenshots: ["/images/mordor-1.jpg", "/images/mordor-2.jpg"],
+    releaseDate: "2014-09-30",
+    publisher: "Warner Bros.",
+  },
+  {
+    id: 3,
+    title: "Dark Souls II",
+    cover: "/images/dark-souls-2.jpg",
+    genre: "Action RPG",
+    description: "Продолжение хардкорной серии с мрачной атмосферой.",
+    platform: "PC",
+    rating: 9.0,
+    screenshots: ["/images/ds2-1.jpg", "/images/ds2-2.jpg"],
+    releaseDate: "2014-03-11",
+    publisher: "Bandai Namco",
+  },
+  {
+    id: 4,
+    title: "Far Cry 4",
+    cover: "/images/far-cry-4.jpg",
+    genre: "FPS",
+    description: "Экшен в открытом мире Гималаев с безумным антагонистом.",
+    platform: "Xbox One",
+    rating: 8.6,
+    screenshots: ["/images/fc4-1.jpg", "/images/fc4-2.jpg"],
+    releaseDate: "2014-11-18",
+    publisher: "Ubisoft",
+  },
+  {
+    id: 5,
+    title: "Alien: Isolation",
+    cover: "/images/alien-isolation.jpg",
+    genre: "Horror",
+    description: 'Выживание в стиле оригинального фильма "Чужой".',
+    platform: "PC",
+    rating: 8.5,
+    screenshots: ["/images/alien-1.jpg", "/images/alien-2.jpg"],
+    releaseDate: "2014-10-07",
+    publisher: "Sega",
+  },
+  {
+    id: 6,
+    title: "Bayonetta 2",
+    cover: "/images/bayonetta-2.jpg",
+    genre: "Action",
+    description: "Фееричный слэшер с ведьмой Бейонеттой.",
+    platform: "Switch",
+    rating: 9.2,
+    screenshots: ["/images/bayonetta-1.jpg", "/images/bayonetta-2.jpg"],
+    releaseDate: "2014-09-20",
+    publisher: "Nintendo",
+  },
+  {
+    id: 7,
+    title: "Hearthstone",
+    cover: "/images/hearthstone.jpg",
+    genre: "Card Game",
+    description: "Карточная игра по вселенной Warcraft.",
+    platform: "PC",
+    rating: 8.8,
+    screenshots: ["/images/hearthstone-1.jpg", "/images/hearthstone-2.jpg"],
+    releaseDate: "2014-03-11",
+    publisher: "Blizzard",
+  },
+  {
+    id: 8,
+    title: "Super Smash Bros. for Wii U",
+    cover: "/images/smash-bros.jpg",
+    genre: "Fighting",
+    description: "Боевая арена с героями Nintendo.",
+    platform: "Switch",
+    rating: 9.0,
+    screenshots: ["/images/smash-1.jpg", "/images/smash-2.jpg"],
+    releaseDate: "2014-11-21",
+    publisher: "Nintendo",
+  },
+  {
+    id: 9,
+    title: "Titanfall",
+    cover: "/images/titanfall.jpg",
+    genre: "FPS",
+    description: "Динамичные перестрелки с участием титанов.",
+    platform: "Xbox One",
+    rating: 8.4,
+    screenshots: ["/images/titanfall-1.jpg", "/images/titanfall-2.jpg"],
+    releaseDate: "2014-03-11",
+    publisher: "Electronic Arts",
+  },
+  {
+    id: 10,
+    title: "Watch Dogs",
+    cover: "/images/watch-dogs.jpg",
+    genre: "Action",
+    description: "Хакерский боевик в открытом мире Чикаго.",
+    platform: "PS4",
+    rating: 8.1,
+    screenshots: ["/images/watchdogs-1.jpg", "/images/watchdogs-2.jpg"],
+    releaseDate: "2014-05-27",
+    publisher: "Ubisoft",
+  },
+];
