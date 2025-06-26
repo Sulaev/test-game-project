@@ -1,9 +1,29 @@
+import { Button } from "@/components/ui/button";
+import { Gamepad2, ShoppingBasket } from "lucide-react";
+
 export default function Header() {
   return (
-    <header className="h-64 bg-[url('/images/header-bg.jpg')] bg-cover bg-center flex items-center justify-center">
-      <h1 className="text-4xl md:text-6xl font-bold text-cyan-400 drop-shadow-lg animate-fade-in">
-        Топ-10 игр 2014 года
-      </h1>
+    <header className="fixed top-0 left-0 right-0 h-15 flex items-center py-3.5 px-7 backdrop-blur-md bg-black/30 border-b border-white/10 z-50">
+      <div className="flex justify-between w-full">
+        <div className="flex gap-2">
+          <Button variant="ghost" className="w-20">
+            Logo
+            <Gamepad2 />
+          </Button>
+          <Button variant="ghost" className="w-20">
+            Catalog
+          </Button>
+          <Button variant="ghost" className="w-20">
+            Blog
+          </Button>
+          <Button variant="ghost" className="w-20">
+            About Us
+          </Button>
+        </div>
+        <Button variant="ghost" className="w-15">
+          <ShoppingBasket />
+        </Button>
+      </div>
     </header>
   );
 }

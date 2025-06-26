@@ -6,6 +6,7 @@ import Filters from "./components/Filters";
 import GameCard from "./components/GameCard";
 import GameModal from "./components/GameModal";
 import Header from "./components/Header";
+import Image from "next/image";
 
 export default function Home() {
   const [platform, setPlatform] = useState("");
@@ -21,7 +22,18 @@ export default function Home() {
   const platforms = Array.from(new Set(allGames.map((g) => g.platform)));
 
   return (
-    <main className="min-h-screen bg-black text-white px-4 pb-12">
+    <main className="relative min-h-screen text-white pb-12 px-15 pt-15">
+      <div className="fixed inset-0 -z-10">
+        <Image
+          src="/backgroundImage.jpg"
+          alt="Background"
+          fill
+          quality={80}
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
       <Header />
       <Filters
         platforms={platforms}

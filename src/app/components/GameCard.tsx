@@ -9,7 +9,7 @@ export default function GameCard({ game, onClick }: Props) {
   return (
     <div
       onClick={onClick}
-      className="bg-gray-900 p-4 rounded-lg cursor-pointer hover:scale-105 transition"
+      className=" p-4 rounded-lg cursor-pointer hover:scale-105 transition backdrop-blur-md bg-black/30 border-b border-white/10"
     >
       <img
         src={game.cover}
