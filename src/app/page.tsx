@@ -8,6 +8,13 @@ import GameModal from "./components/GameModal";
 import Header from "./components/Header";
 import { Dialog, DialogTrigger } from "@/app/components/ui/dialog";
 import Image from "next/image";
+import { Oi } from "next/font/google";
+
+const oiFont = Oi({
+  weight: "400",
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+});
 
 export default function Home() {
   const [platform, setPlatform] = useState("");
@@ -37,11 +44,35 @@ export default function Home() {
       </div>
 
       <Header />
+
+      <div className="w-full text-left my-8">
+        <div className="inline-block">
+          <p
+            className={`${oiFont.className} text-lg md:text-xl font-mono mb-2 bg-gradient-to-r from-yellow-400 via-red-500 bg-clip-text text-transparent`}
+          >
+            TIME TO REMEMBER
+          </p>
+          <h1
+            className={`${oiFont.className} text-5xl md:text-7xl bg-gradient-to-r from-yellow-400 via-red-500 to-purple-600 bg-clip-text text-transparent`}
+          >
+            Топ-10 игр 2014 года
+          </h1>
+        </div>
+      </div>
+
       <Filters
         platforms={platforms}
         onPlatformChange={setPlatform}
         onSortChange={setSortOrder}
       />
+
+      {platform && (
+        <div className="mt-6 mb-4">
+          <h2 className="text-xl md:text-2xl font-semibold text-white/80">
+            Самое лучшее на {platform}
+          </h2>
+        </div>
+      )}
 
       <div className="w-full">
         <Dialog
