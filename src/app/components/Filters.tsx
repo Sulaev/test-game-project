@@ -1,3 +1,11 @@
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
+
 type Props = {
   platforms: string[];
   onPlatformChange: (platform: string) => void;
@@ -11,25 +19,33 @@ export default function Filters({
 }: Props) {
   return (
     <div className="flex justify-between items-center gap-4 py-4">
-      <select
-        onChange={(e) => onPlatformChange(e.target.value)}
-        className="p-2 rounded"
+      <Select
+        onValueChange={(value) =>
+          onPlatformChange(value === "all" ? "" : value)
+        }
       >
-        <option value="">Все платформы</option>
-        {platforms.map((p) => (
-          <option key={p} value={p}>
-            {p}
-          </option>
-        ))}
-      </select>
+        <SelectTrigger className="w-[180px]">
+          <SelectValue placeholder="Все платформы" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all">Все платформы</SelectItem>
+          {platforms.map((platform) => (
+            <SelectItem key={platform} value={platform}>
+              {platform}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
 
-      <select
-        onChange={(e) => onSortChange(e.target.value as "asc" | "desc")}
-        className="p-2 rounded"
-      >
-        <option value="desc">Сначала лучшие</option>
-        <option value="asc">Сначала худшие</option>
-      </select>
+      <Select onValueChange={onSortChange}>
+        <SelectTrigger className="w-[180px]">
+          <SelectValue placeholder="Сортировка" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="desc">Сначала лучшие</SelectItem>
+          <SelectItem value="asc">Сначала худшие</SelectItem>
+        </SelectContent>
+      </Select>
     </div>
   );
 }
