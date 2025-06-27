@@ -6,6 +6,7 @@ import Filters from "./components/Filters";
 import GameCard from "./components/GameCard";
 import GameModal from "./components/GameModal";
 import Header from "./components/Header";
+import { Dialog, DialogTrigger } from "@/app/components/ui/dialog";
 import Image from "next/image";
 
 export default function Home() {
@@ -34,24 +35,39 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/60" />
       </div>
+
       <Header />
       <Filters
         platforms={platforms}
         onPlatformChange={setPlatform}
         onSortChange={setSortOrder}
       />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {filteredGames.map((game) => (
-          <GameCard
-            key={game.id}
-            game={game}
-            onClick={() => setSelectedGame(game)}
-          />
-        ))}
+
+      <div className="w-full">
+        <Dialog
+          open={!!selectedGame}
+          onOpenChange={(isOpen) => {
+            if (!isOpen) setSelectedGame(null);
+          }}
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
+            {filteredGames.map((game) => (
+              <DialogTrigger asChild key={game.id}>
+                <div onClick={() => setSelectedGame(game)}>
+                  <GameCard game={game} onClick={() => {}} />
+                </div>
+              </DialogTrigger>
+            ))}
+          </div>
+
+          {selectedGame && (
+            <GameModal
+              game={selectedGame}
+              onClose={() => setSelectedGame(null)}
+            />
+          )}
+        </Dialog>
       </div>
-      {selectedGame && (
-        <GameModal game={selectedGame} onClose={() => setSelectedGame(null)} />
-      )}
     </main>
   );
 }

@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 import { Gamepad2, ShoppingBasket } from "lucide-react";
 
 export default function Header() {
@@ -7,17 +7,17 @@ export default function Header() {
       <div className="flex justify-between w-full">
         <div className="flex gap-2">
           <Button variant="ghost" className="w-20">
-            Logo
+            Лого
             <Gamepad2 />
           </Button>
           <Button variant="ghost" className="w-20">
-            Catalog
+            Каталог
           </Button>
           <Button variant="ghost" className="w-20">
-            Blog
+            Блог
           </Button>
           <Button variant="ghost" className="w-20">
-            About Us
+            О нас
           </Button>
         </div>
         <Button variant="ghost" className="w-15">
